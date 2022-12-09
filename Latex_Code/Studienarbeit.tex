@@ -1,0 +1,256 @@
+\documentclass[
+    load-dhbw-templates,
+    load-preamble = true,
+    auto-intro-pages = all,
+    add-tocs-to-toc,
+    debug = true,
+    language = english,
+    mainlanguage = ngerman,
+    add-bibliography,
+    bib-file = dhbw-source.bib,
+    biblatex/style = alphabetic, 
+]{iodhbwm}
+
+\input{dependencies.tex}
+%TODO
+\dhbwsetup{%
+	intro/append custom content = {\listofappendices},
+	dhbw location			= Mannheim,
+	abstract				= abstract.tex,
+    author                  = Belana Roman \& Noah Wiederhold,
+    date					= [Datum],
+    submission date			= [Abgabe Datum],
+    thesis type             = SA,
+    thesis title            = [Thema],
+    student id              = <Matrikelnummer>,
+    institute               = Deutsches Zentrum für Luft- und Raumfahrt,
+   	institute section		= Institut für Flugsystemtechnik - Flugdynamik und Simulation,
+   	institute logo			= ../Fotos/Standard/Logo-DLR,
+    course/id               = TINF20IT1,
+    course/name				= Informationstechnik,
+    supervisor              = <Name des Betreuers>,
+    processing period       = {24.12.2020 - 02.04.2021,28.06.2021- 30.09.2021},
+    location                = Mannheim
+    
+}
+
+% Rename appendix name
+\renewcommand{\listappendixname}{Anhangsverzeichnis}
+
+%\ExecuteBibliographyOptions{hyperref=true}
+\begin{document}
+    
+
+$
+%	Abkürzungen:
+%	\ac{Bezeichner}
+%
+%	Verweise deklarieren:
+%	\label{sec:Bezeichner}
+% 	\label{fig:Bezeichner}
+%
+%	Verweise setzen:
+%	(siehe \ref{sec:Bez} \nameref{sec:Bez} auf Seite \pageref{sec:Bez})
+%
+%	Grafiken einfügen:
+%	\begin{figure}[!hbpt]
+%	\centering
+%	\includegraphics[scale=0.7]{pictures/schema/osg_mit_opengl_ebenen.PNG}
+%	\caption[OSG Ebenen]{Ebenen einer Anwendung mit OSG Einbindung}
+%	\label{fig:OSG_Ebenen} 
+%	\end{figure}
+%	
+%	Text hervorheben:
+%	\texttt{Text}
+%
+%	Text zentrieren:
+%	\begin{center}
+%	Text
+%	\end{center}
+%
+%	Pfeil nach rechts:
+%	\\rightarrow
+%
+%	Anführungszeichen:
+%	"'Text"'
+%
+%	Erzwinge Ausgabe von Grafiken, etc. an bestimmtem Punkt:
+%	\clearpage
+%
+%	Erzwinge neue Seite:
+%	\newpage
+%
+%	Aufzählung:
+%	\begin{center}
+%	\begin{itemize}
+%	\item Text
+%	\end{itemize}
+%	\end{center}
+$   
+$    
+%	\chapter{Hauptebene}
+%
+%	\section{Ebene 1}
+%
+%	\subsection{Ebene 2}
+%
+%	\subsubsection{Ebene 3}
+%
+%	\subsubsection*{Ebene 3 ohne Aufzählung}
+$
+\chapter{Einleitung}
+    \section{Motivation}
+    Innerhalb eines dualen Studiums ist das Wechseln der Standorte zwischen Theorie- und Praxisphasen ein zentraler Bestandteil des Alltages. Der Wechsel findet dabei meist alle 3 Monate statt, und hat je nach Entfernung der beiden Standorte häufig auch einen Wechsel des Wohnortes für diese Zeit zur Folge. Bei der Haltung beziehungsweise Zucht von Pflanzen stehen wir Studenten daher vor einigen Herausforderungen.
+    Entweder die Pflanzen müssen alle drei Monaten zum nächsten Standort transportiert werden, oder es müssen stets neue Pflanzen gezüchtet beziehungsweise gekauft werden. Um solche Probleme anzugehen, gibt es auf dem Markt einige vollautomatische Smart-Garden-Systeme, die den Anbau von Pflanzen in jeder Wohnung ermöglichen sollen und die Pflanzen dabei selbstständig mit Wasser, Licht und Nährstoffen versorgen. Innerhalb solcher Systeme finden allerdings nur wenige Pflanzen Platz und je umfangreicher ein solches System sein soll, desto schneller steigt auch der Preis dafür.
+
+    Ziel dieser Arbeit ist daher die Entwicklung einer eigenständigen digitale Überwachung und automatisierten Pflege von Pflanzen im eigenen Zuhause, um eine Möglichkeit zur Erhaltung von Pflanzen über längere Abwesenheiten hinweg zu schaffen.
+
+    %TODO Detaillierter Beschreiben wie? Mit Webserver etc.?
+    \section{Zielsetzung}
+    Innerhalb des zu entwickelnden Systems sollen verschiedenen Parametern bezüglich des Pflanzenwachstums, darunter die Bodenfeuchte der Erde sowie die Temperatur im Raum überwacht und schließlich für den Anwender geeignet dargestellt werden, sodass eine Überwachung der Pflanzen auch aus der Ferne möglich wird.  
+    Auf die gemessenen Parameter soll das Überwachungssystem darüber hinaus auch entsprechend mit automatischen Systemen, wie einem automatischen Bewässerungssystem, reagieren.
+
+    Das so entwickelte digitale Gartensystem lässt sich schließlich individuell anpassen und beliebig um weitere Parameter oder weitere Pflanzen erweitern.
+
+\chapter{Strukturierte Aufgabenstellung} 
+    (verifizierbar, validierbar)
+
+    Aufgabe1 
+    Darstellung der theoretischen Grundlagen
+    1.1 arduinou
+    1.2 arduino uno
+    1.3 Sensoren
+    1.3.1 Feuchtigkeitssensore
+    ...
+    Aufgabe 2
+    Entwicklung eines Konzepts
+    2.1 Zusammenhang Module
+    Schnittstellen
+    Wie sollen Daten ausgetauscht werden
+    2.2 Modul Arduino
+    2.3 Modul Web...
+    Aufgabe 3
+    Implementierung
+    3.1 Modul ... 
+    
+
+
+
+
+
+\chapter{Methoden \& Verfahren}
+    Um die Reproduzierbarkeit dieser Arbeit zu gewährleisten, werden im Folgenden die verwendeten Methoden und Verfahren, speziell die verwendete Hard- und Software vorgestellt.
+    
+    \section{Software}
+        (Versionsnummern)
+    \section{Hardware}
+        (Produktnummern)
+    
+
+
+\chapter{Durchführung/Bearbeitung/...}
+
+(Reihenfolge basiert auf Reihenfolge die in Aufgabenstellung erwähnt wurde.)
+
+    \section{Theorie}
+        \subsection{ARDUINO}
+
+        ARDUINO ist eine Plattform für die Entwicklung von Hardwareprojekten.
+        Sie setzt auf einen Open-Source Ansatz und wurde anfänglich am Ivrea Interaction Design Institute in Italien entwickelt.
+        Die eigene Produktspanne erstreckt sich über verschiedene Serien mit den Namen Nano, MKR und Classic.
+        Von ARDUINO selbst werden innerhalb dieser Serien vor allem Boards und Shields entwickelt. 
+        
+        Aufgrund der Kompatibilität zu analogen und digitalen Bauteilen sowie relativ geringer Anschaffungskosten sind die Boards zum Beispiel im Bereich der DIY-Bewegung ("'Do It Yourself"'-Bewegung) sehr beliebt und verbreitet.
+
+        Ergänzend zur Hardware der Plattform gibt es eine eigene Entwicklungsumgebung, welche "'ARDUINO IDE"' die Programmierung der Boards sehr einsteigerfreundlich ermöglicht. Die verwendete Programmiersprache ist angelehnt an C++.
+
+        \subsection{ARDUINO UNO}
+
+        %TODO Bild aus RL einfügen
+
+        Der ARDUINO UNO ist ein Mikrocontroller-Board, welches einen schnellen Einstieg in die Entwicklung von kleineren Elektronik-Projekten ermöglicht. Zum Zeitpunkt dieser Arbeit existieren 3 Revisionen des Basis-Boards und jeweils verschiedenste erweiterte Versionen. Die folgenden Ausführungen beziehen sich dabei auf die WIFI Version der Revision 2.
+
+        Auf dem Board ARDUINO UNO REV2 gibt es neben einer grundlegenden Stromversorgung verschiedenste Komponenten für die Ein- und Ausgabe. Die wichtigsten Komponenten sind dabei in Abbildung \ref{fig:ARDUINOUNOSketch} markiert.
+
+        \begin{figure}[H]
+            \centering
+            \includegraphics[scale=0.25]{../Quellenangaben/Dokumente/ARDUINO UNO REV2 Dokumentation/unorev2_edited.png}
+            \caption[ARDUINOUNOSketch]{Struktur des ARDUINO UNO WIFI REV2 \footnotemark}
+            \label{fig:ARDUINOUNOSketch} 
+        \end{figure}
+            
+        \footnotetext{~\citetitle{arduinounorev2doc} \cite{arduinounorev2doc}}
+            
+        Am Marker 1 befindet sich ein USB Typ-B Port der zur Stromversorgung und zum Laden von Programmen benötigt wird.
+        An der 2. Markierung ist die separate Stromversorgung zu sehen. Das Board kann über diesen mit 6-20V betrieben werden. Konkret kommt dafür ein Netzgerät oder auch eine mobile Powerbank in Betracht.
+        Der Marker 3 zeigt auf den zentralen Chip des Boards, den Mikroprozessor ATmega4809, welcher mit Taktraten von 16MHz arbeitet.
+        Die Markierung 4 zeigt den Controller für die USB Verbindung und den ISP Flash.
+        An der 5 sind die verschiedenen digitalen I/O-Pins zu sehen über die digitale Werte von z.B. Sensoren gelesen oder auch geschrieben werden können.
+        Die 6 markiert die Power-Pins, welche die Versorgungsspannung für angeschlossene Sensoren oder Geräte zur Verfügung stellen.
+        Am Marker 7 sind die analogen Input-Pins zu sehen, welche für das Lesen von analogen Signalen verwendet werden.
+        Der letzte Marker, die Nummer 8, zeigt eine speziell auf der WIFI Version verbaute Komponente, das NINA-W102 Wlan- und Bluetooth-Modul. Über dieses wird die Kommunikation zwischen verschiedenen, räumlich getrennten Geräten und das Hochladen von ARDUINO Sketches "'over the air"' ermöglicht.
+        Das WLAN Modul ist bei der Basis-Version des Boards nicht verbaut.
+
+        \subsection{Feuchtigkeitssensoren}
+
+        %Verschiedene Messmethoden vorstellen
+
+        %Warum haben wir uns für Kapazitive Messung entschieden?
+
+        %Welche Sensoren haben wir ausgewählt, Spezifikationen?
+        
+        \subsection{Temperatursensoren}
+        \subsection{Lichtsensor}
+        \subsection{Arduino IDE}
+    \section{Konzept}
+        \subsection{Zusammenhang Module}
+        \subsection{Messmodul}
+        \subsection{Speichermodul}
+        \subsection{Auswertungsmodul}
+        \subsection{Automatisierungsmodul}
+    \section{Implementierung}
+        (Struktur entspricht der Struktur der Aufgabenstellung)
+        \subsection{Theorie}
+            \subsubsection{Arduino UNO}
+            \subsubsection{Feuchtigkeitssensoren}
+            \subsubsection{Temperatursensoren}
+            \subsubsection{Lichtsensor}
+            \subsubsection{Arduino IDE}
+        \subsection{Konzept}
+        \subsection{Zusammenhang Module}
+        \subsection{Messmodul}
+        \subsection{Speichermodul}
+        \subsection{Auswertungsmodul}
+        \subsection{Automatisierungsmodul}
+    
+\chapter{Ergebnis}
+    (Kopie der Aufgabenstellung mit gelöst/gelöst, vielleicht als Tabelle)
+    
+\chapter{Kritische Reflexion}
+    (Stellung nehmen zum Ergebnis)
+    (Eigene Meinung zum Ergebnis)
+
+\chapter{Ausblick}
+    (Erweiterungsmöglichkeiten)
+    (Coole weitere Funktionen)
+    (Was kann verbessert werden?)
+
+%gibt das literaturverzeichnis aus    
+%\printbibliography
+%Anhang    
+\appendix
+\chapter{Begriffsdefinitionen}
+
+\section{Begriffsbezeichner} \label{sec:Begriffsbezeichner}
+
+
+
+
+\chapter{Abkürzungsverzeichnis}
+
+
+\input{acronyme.tex}
+
+\nocite{*}
+
+\end{document}

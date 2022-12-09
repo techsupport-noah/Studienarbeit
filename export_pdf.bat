@@ -1,0 +1,1 @@
+xcopy /s /y ".\Latex_Code\Studienarbeit.pdf" "Studienarbeit.pdf*"

@@ -1,0 +1,1 @@
+start texmaker.exe ".\Latex_Code\Praxisbericht.tex"
