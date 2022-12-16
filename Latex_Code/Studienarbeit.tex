@@ -153,26 +153,30 @@ $
 (Reihenfolge basiert auf Reihenfolge die in Aufgabenstellung erwähnt wurde.)
 
     \section{Theorie}
-        \subsection{ARDUINO}%zitiere arduino about conrad 
-
+        \subsection{ARDUINO}
         ARDUINO ist eine Open-Source Plattform für die anfängerfreundliche Entwicklung von Hardwareprojekten.
-        Seit der Gründung 2005 durch Massimo Banzi und David Cuartielles am Ivrea Interaction Design Institute in Italien hat sie sich zu einem beliebten Werkzeug für Hobby-Elektroniker und Ingenieure in Bereichen wie Iot (Internet of Things) und Robotik entwickelt.  
+        Seit der Gründung 2005 durch Massimo Banzi und David Cuartielles am Ivrea Interaction Design Institute in Italien hat sie sich zu einem beliebten Werkzeug für Hobby-Elektroniker und Ingenieure in Bereichen wie Iot (Internet of Things) und Robotik entwickelt.  %zitiere arduino about conrad 
        
-        Die Plattform-eigene Hardware erstreckt sich über verschiedene Produktserien mit den Namen Nano, Classic und MKR. Nano ist dem Namen entsprechend eine Boardfamilie die sich durch ein besonders kompaktes Design auszeichnet. Die Classic Reihe ist im Gegensatz dazu vergleichsweise groß konzipiert und bietet Basis Boards mit vielen Ein- und Ausgängen. Die MKR Serie zeichnet sich im Vergleich zu den anderen Produktreihen durch ein hohes Maß an Konnektivität aus, da fast alle Boards von Werk aus unter anderem mit Wi-Fi- und Bluetooth-Chips ausgestattet sind. Einige verfügbare Boards der jeweiligen Reihen sind in Abbildung X zu sehen. %TODO Abbildung machen 
+        Die Plattform-eigene Hardware erstreckt sich über verschiedene Produktserien mit den Namen Nano, Classic und MKR. Nano ist dem Namen entsprechend eine Boardfamilie, die sich durch ein besonders kompaktes Design auszeichnet. Die Classic Reihe ist im Gegensatz dazu vergleichsweise groß konzipiert und bietet Basis Boards mit vielen Ein- und Ausgängen. Die MKR Serie zeichnet sich im Vergleich zu den anderen Produktreihen durch ein hohes Maß an Konnektivität aus, da fast alle Boards von Werk aus unter anderem mit Wi-Fi- und Bluetooth-Chips ausgestattet sind. Einige verfügbare Boards der jeweiligen Reihen sind in Abbildung X zu sehen. %TODO Abbildung machen 
         Von ARDUINO selbst werden innerhalb dieser Serien vor allem Boards und Shields entwickelt.%zitiere Arduino about
 
-        Neben der Hardware bietet die ARDUINO-Plattform eine eigene integrierte Programmierumgebung (IDE), welche es Anwendern ermöglicht schnell kompatiblen Code zu schreiben und diesen auf die Boards zu übertragen. Vor allem die Möglichkeit Code nicht nur herkömmlich per Kabel, sondern auch kabellos über WLAN oder Bluetooth zu übertragen vereinfacht und beschleunigt den Entwicklungsprozess sehr. Für die Programmierung mit der Entwicklungsumgebung wird eine C++ ähnliche Sprache verwendet. Zusätzlich können über die Umgebung Code-Bibliotheken in eigene Projekte eingebunden werden, welche gängige Aufgaben übernehmen oder Kompatibilität zu Geräten und Mikrocontrollern von Drittanbietern ermöglichen.%belegen?
+        Neben der Hardware bietet die ARDUINO-Plattform eine eigene integrierte Programmierumgebung (IDE), welche es Anwendern ermöglicht schnell kompatiblen Code zu schreiben und diesen auf die Boards zu übertragen. Vor allem die Möglichkeit Code nicht nur herkömmlich per Kabel, sondern auch kabellos über WLAN oder Bluetooth zu übertragen vereinfacht und beschleunigt den Entwicklungsprozess sehr. Für die Programmierung mit der Entwicklungsumgebung wird eine C++ ähnliche Sprache verwendet. Zusätzlich können über die Umgebung Code-Bibliotheken in eigene Projekte eingebunden werden, welche gängige Aufgaben übernehmen oder Kompatibilität zu Geräten und Mikrocontrollern von Drittanbietern ermöglichen.%belegen!
         
         Aufgrund dieser Kompatibilität, der Möglichkeit eine Vielzahl von analogen sowie digitalen Bauteilen zu verwenden und vergleichsweise geringen Anschaffungskosten, sind die Boards zum Beispiel im Bereich der DIY-Bewegung ("'Do It Yourself"'-Bewegung) sehr beliebt und verbreitet.
-        Im Bereich professioneller Anwendung wird ARDUINO zum Beispiel für Prototyping und Rapid-Iteration verwendet.
+        Im Bereich professioneller Anwendung wird ARDUINO zum Beispiel für Prototyping und Rapid-Iteration verwendet.%belegen! vielleicht bei conrad drinne
+
+        %TODO Schultheiß , sollten wir hier begründen warum wir uns für die arduino plattform entschieden haben?
 
         \subsection{ARDUINO UNO}
 
         %TODO Bild aus RL einfügen
 
-        Der ARDUINO UNO ist ein Mikrocontroller-Board, welches einen schnellen Einstieg in die Entwicklung von kleineren Elektronik-Projekten ermöglicht. Zum Zeitpunkt dieser Arbeit existieren 3 Revisionen des Basis-Boards und jeweils verschiedenste erweiterte Versionen. Die folgenden Ausführungen beziehen sich dabei auf die WIFI Version der Revision 2.
+        Der ARDUINO UNO ist ein Mikrocontroller-Board der ARDUINO-Plattform aus der Classic-Produktreihe. Zum Zeitpunkt dieser Arbeit existieren 3 Revisionen des Basis-Boards und jeweils verschiedenste um zusätzliche Bauteile erweiterte Versionen. Für die vorliegende Arbeit wurde aus dieser Vielzahl an Boards konkret die Wi-Fi-Version der Revision 2 ausgewählt, da diese bereits mit einem WLAN-Chip ausgestattet ist. Für die Anwendung als Steuereinheit eines smarten Pflanzenzuchtsystems ist dies von Vorteil, da kein Netzwerkkabel oder zusätzliche Hardware für die Übertragung von Messwerten an die auswertende Instanz nötig ist.
+        Die folgenden Ausführungen beziehen sich demzufolge auf diese Version des Boards.
 
-        Auf dem Board ARDUINO UNO REV2 gibt es neben einer grundlegenden Stromversorgung verschiedenste Komponenten für die Ein- und Ausgabe. Die wichtigsten Komponenten sind dabei in Abbildung \ref{fig:ARDUINOUNOSketch} markiert.
+        Das Board ist in Abbildung X zu sehen.%TODO Bild rein
+        Die Abbildung \ref{fig:ARDUINOUNOSketch} zeigt zusätzlich dazu den schematischen Aufbau des Boards mit Kennzeichnung wichtiger Bauteile.
+       
 
         \begin{figure}[H]
             \centering
@@ -182,10 +186,13 @@ $
         \end{figure}
             
         \footnotetext{~\citetitle{arduinounorev2doc} \cite{arduinounorev2doc}}
-            
-        Am Marker 1 befindet sich ein USB Typ-B Port der zur Stromversorgung und zum Laden von Programmen benötigt wird.
+           
+        Der ARDUINO verfügt über einen USB Typ-B Port (Abbildung X Markierung Y $TODO$), welcher zur Stromversorgung und zum Laden von Programmcode verwendet werden kann. Die Stromversorgung ist zusätzlich dazu auch über einen separaten Port (Abbildung X Markierung Y $TODO$) möglich. Dieser kann mit 6 bis 20 Volt über ein Netzgerät oder auch eine Powerbank betrieben werden.
+        Die zentrale Recheneinheit des Boards ist der Mikroprozessor ATmega4809 (Abbildung X Markierung Y $TODO$), welcher mit Taktraten von 16MHz arbeitet. Er besitzt 48 KB Flash Memory, 6144 Bytes SRAM und einen EEPROM von 256 Bytes.%TODO Arduino Uno wifi rev2 dokumentation zitieren
+
+        $Am Marker 1 befindet sich ein USB Typ-B Port der zur Stromversorgung und zum Laden von Programmen benötigt wird.
         An der 2. Markierung ist die separate Stromversorgung zu sehen. Das Board kann über diesen mit 6-20V betrieben werden. Konkret kommt dafür ein Netzgerät oder auch eine mobile Powerbank in Betracht.
-        Der Marker 3 zeigt auf den zentralen Chip des Boards, den Mikroprozessor ATmega4809, welcher mit Taktraten von 16MHz arbeitet.
+        Der Marker 3 zeigt auf den zentralen Chip des Boards, den Mikroprozessor ATmega4809, welcher mit Taktraten von 16MHz arbeitet.$
         Die Markierung 4 zeigt den Controller für die USB Verbindung und den ISP Flash.
         An der 5 sind die verschiedenen digitalen I/O-Pins zu sehen über die digitale Werte von z.B. Sensoren gelesen oder auch geschrieben werden können.
         Die 6 markiert die Power-Pins, welche die Versorgungsspannung für angeschlossene Sensoren oder Geräte zur Verfügung stellen.
@@ -211,14 +218,6 @@ $
         \subsection{Auswertungsmodul}
         \subsection{Automatisierungsmodul}
     \section{Implementierung}
-        (Struktur entspricht der Struktur der Aufgabenstellung)
-        \subsection{Theorie}
-            \subsubsection{Arduino UNO}
-            \subsubsection{Feuchtigkeitssensoren}
-            \subsubsection{Temperatursensoren}
-            \subsubsection{Lichtsensor}
-            \subsubsection{Arduino IDE}
-        \subsection{Konzept}
         \subsection{Zusammenhang Module}
         \subsection{Messmodul}
         \subsection{Speichermodul}
