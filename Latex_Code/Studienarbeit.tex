@@ -115,7 +115,7 @@ $
 \chapter{Strukturierte Aufgabenstellung} 
     (verifizierbar, validierbar)
 
-    Aufgabe1 
+    Aufgabe 1 
     Darstellung der theoretischen Grundlagen
     1.1 arduinou
     1.2 arduino uno
@@ -186,27 +186,42 @@ $
         \end{figure}
             
         \footnotetext{~\citetitle{arduinounorev2doc} \cite{arduinounorev2doc}}
-           
-        Der ARDUINO verfügt über einen USB Typ-B Port (Abbildung X Markierung Y $TODO$), welcher zur Stromversorgung und zum Laden von Programmcode verwendet werden kann. Die Stromversorgung ist zusätzlich dazu auch über einen separaten Port (Abbildung X Markierung Y $TODO$) möglich. Dieser kann mit 6 bis 20 Volt über ein Netzgerät oder auch eine Powerbank betrieben werden.
-        Die zentrale Recheneinheit des Boards ist der Mikroprozessor ATmega4809 (Abbildung X Markierung Y $TODO$), welcher mit Taktraten von 16MHz arbeitet. Er besitzt 48 KB Flash Memory, 6144 Bytes SRAM und einen EEPROM von 256 Bytes.%TODO Arduino Uno wifi rev2 dokumentation zitieren
 
-        $Am Marker 1 befindet sich ein USB Typ-B Port der zur Stromversorgung und zum Laden von Programmen benötigt wird.
-        An der 2. Markierung ist die separate Stromversorgung zu sehen. Das Board kann über diesen mit 6-20V betrieben werden. Konkret kommt dafür ein Netzgerät oder auch eine mobile Powerbank in Betracht.
-        Der Marker 3 zeigt auf den zentralen Chip des Boards, den Mikroprozessor ATmega4809, welcher mit Taktraten von 16MHz arbeitet.$
-        Die Markierung 4 zeigt den Controller für die USB Verbindung und den ISP Flash.
-        An der 5 sind die verschiedenen digitalen I/O-Pins zu sehen über die digitale Werte von z.B. Sensoren gelesen oder auch geschrieben werden können.
-        Die 6 markiert die Power-Pins, welche die Versorgungsspannung für angeschlossene Sensoren oder Geräte zur Verfügung stellen.
-        Am Marker 7 sind die analogen Input-Pins zu sehen, welche für das Lesen von analogen Signalen verwendet werden.
-        Der letzte Marker, die Nummer 8, zeigt eine speziell auf der WIFI Version verbaute Komponente, das NINA-W102 Wlan- und Bluetooth-Modul. Über dieses wird die Kommunikation zwischen verschiedenen, räumlich getrennten Geräten und das Hochladen von ARDUINO Sketches "'over the air"' ermöglicht.
-        Das WLAN Modul ist bei der Basis-Version des Boards nicht verbaut.
+        Das Board besitzt einen Eingang für sogenannte "'Barrel Plugs"' (Abbildung X Markierung Y), welcher der Stromversorgung dient. Er ermöglicht es den ARDUINO mit Spannungen zwischen 6 und 20 Volt zu betreiben. Aufgrund des geringen Strombedarfs des Boards kommen dafür normale Netzgeräte sowie Powerbanks infrage.
+        
+        Die Stromversorgung kann zusätzlich über einen USB Typ-B Port (Abbildung X Markierung Y) erfolgen. Dieser dient jedoch vor allem zum klassischen Laden von Programmcode über Kabel. 
+
+        Für die USB Verbindung und den ISP Flash besitzt der Arduino einen eigenen Controller (Abbildung X Markierung Y).
+
+        Die zentrale Recheneinheit des Boards ist der Mikroprozessor ATmega4809 (Abbildung X Markierung Y $TODO$), welcher mit Taktraten von 16MHz arbeitet. Er besitzt 48 KB Flash Memory, 6144 Bytes SRAM und einen 256 Bytes großen EEPROM. %TODO Arduino Uno wifi rev2 dokumentation zitieren
+
+        Die Kommunikation mit externer Hardware erfolgt über digitale (Abbildung X Markierung Y) und analoge (Abbildung X Markierung Y) I/O-Pins. Mit diesen können z.B. Werte von Sensoren gelesen oder auch geschrieben werden.
+        Die Versorgung der angeschlossenen Hardware erfolgt über separate Power-Pins, die entweder mit 3,3 oder 5 Volt arbeiten.
+        
+        Die WIFI-Version des Boards besitzt im Vergleich zum Basis-Board zusätzlich ein NINA-W102 WLAN- und Bluetooth-Modul. Über dieses wird die Kommunikation zwischen verschiedenen, räumlich getrennten Geräten und das Hochladen von ARDUINO Sketches "'over the air"' ermöglicht.
 
         \subsection{Feuchtigkeitssensoren}
 
         %Verschiedene Messmethoden vorstellen
+        Zur Feuchtigkeitsbestimmung mit Hilfe von Sensoren können 2 grundlegende Verfahren verwendet werden. Die einfachste Methode ist dabei die Messung über die elektrische Leitfähigkeit. Hierbei wird mit Hilfe von zwei Elektroden die Leitfähigkeit der zwischen den Elektrodenstäben befindlichen Erde gemessen und von dieser auf die Bodenfeuchte geschlossen. Dieses Verfahren beruht jedoch auf dem direkten Kontakt von Elektroden mit Feuchtigkeit im Boden, wodurch die Elektroden schnell korrodieren. Weiterhin beeinflussen die im Wasser gelösten Salze und Mineralien die Leitfähigkeit wodurch die Messergebnisse unvorhersehbar beeinflusst werden. %TODO DVS Bodenfeuchte zitieren
+
+        Die Alternative zur Messung mit Elektroden ist die kapazitive Messung.
+        Hierbei wird ein Kondensator mit einem Dielektrikum verwendet. Das hygroskopische Dielektrikum tauscht dabei Wasserdampf aus dem Boden mit dem Dielektrikum aus. Über eine Messung der Kapazität des Kondensators kann anschließend die relative Feuchte des Bodens über den Wasseranteil des Dielektrikum bestimmt werden. %TODO https://messtechnik-und-sensorik.org/10-sensoren-fuer-temperatur-feuchte-und-gaskonzentrationen/ zitieren
+        Dieses Verfahren hat den Vorteil, dass kein direkter Kontakt zwischen dem Boden und den Platten des Kondensators vorliegt und dadurch, bei korrekter Verwendung, praktisch keine Korrosion auftritt.
+        Weiterhin kann über dieses Prinzip, eine Auswirkung von im Wasser gelösten Salzen auf das Messergebnis verhindert werden.
+        %DVS zitieren
 
         %Warum haben wir uns für Kapazitive Messung entschieden?
+        Auf Grund der Vorteile des kapazitiven Messverfahrens gegenüber dem Messverfahren mit Elektroden wurden im Rahmen dieser Arbeit nur kapazitive Sensoren verwendet.
 
         %Welche Sensoren haben wir ausgewählt, Spezifikationen?
+
+        Konkret wurde die Sensoren 101020614 von Seeed Studio und SEN0193 von DFRobot verwendet.
+
+        %TODO Abbildung der Sensoren einfügen und referenzieren
+
+        Beide Sensoren lassen sich entweder mit 3,3 oder 5 Volt betreiben und liefern analoge Werte.
+        Im direkten Vergleich unterscheiden sich die Messwerte beider Sensoren %TODO Daten vom Test einpflegen 
         
         \subsection{Temperatursensoren}
         \subsection{Lichtsensor}
