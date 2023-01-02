@@ -8,10 +8,13 @@
     mainlanguage = ngerman,
     add-bibliography,
     bib-file = dhbw-source.bib,
-    biblatex/style = alphabetic, 
+    biblatex/style = numeric,
+    print- = false
 ]{iodhbwm}
 
 \input{dependencies.tex}
+\usepackage{hyperref}
+
 %TODO
 \dhbwsetup{%
 	intro/append custom content = {\listofappendices},
@@ -108,7 +111,7 @@ $
     %TODO Detaillierter Beschreiben wie? Mit Webserver etc.?
     \section{Zielsetzung}
     Innerhalb des zu entwickelnden Systems sollen verschiedenen Parametern bezüglich des Pflanzenwachstums, darunter die Bodenfeuchte der Erde sowie die Temperatur im Raum überwacht und schließlich für den Anwender geeignet dargestellt werden, sodass eine Überwachung der Pflanzen auch aus der Ferne möglich wird.  
-    Auf die gemessenen Parameter soll das Überwachungssystem darüber hinaus auch entsprechend mit automatischen Systemen, wie einem automatischen Bewässerungssystem, reagieren.
+    Auf die gemessenen Parameter soll das Überwachungssystem darüber hinaus entsprechend mit automatischen Systemen, wie einem automatischen Bewässerungssystem, reagieren.
 
     Das so entwickelte digitale Gartensystem lässt sich schließlich individuell anpassen und beliebig um weitere Parameter oder weitere Pflanzen erweitern.
 
@@ -157,13 +160,35 @@ $
         ARDUINO ist eine Open-Source Plattform für die anfängerfreundliche Entwicklung von Hardwareprojekten.
         Seit der Gründung 2005 durch Massimo Banzi und David Cuartielles am Ivrea Interaction Design Institute in Italien hat sie sich zu einem beliebten Werkzeug für Hobby-Elektroniker und Ingenieure in Bereichen wie Iot (Internet of Things) und Robotik entwickelt.  %zitiere arduino about conrad 
        
-        Die Plattform-eigene Hardware erstreckt sich über verschiedene Produktserien mit den Namen Nano, Classic und MKR. Nano ist dem Namen entsprechend eine Boardfamilie, die sich durch ein besonders kompaktes Design auszeichnet. Die Classic Reihe ist im Gegensatz dazu vergleichsweise groß konzipiert und bietet Basis Boards mit vielen Ein- und Ausgängen. Die MKR Serie zeichnet sich im Vergleich zu den anderen Produktreihen durch ein hohes Maß an Konnektivität aus, da fast alle Boards von Werk aus unter anderem mit Wi-Fi- und Bluetooth-Chips ausgestattet sind. Einige verfügbare Boards der jeweiligen Reihen sind in Abbildung X zu sehen. %TODO Abbildung machen 
+        Die Plattform-eigene Hardware erstreckt sich über verschiedene Produktserien mit den Namen Nano, Classic und MKR. Nano ist dem Namen entsprechend eine Boardfamilie, die sich durch ein besonders kompaktes Design auszeichnet. Die Classic Reihe ist im Gegensatz dazu vergleichsweise groß konzipiert und bietet Basis Boards mit vielen Ein- und Ausgängen. Die MKR Serie zeichnet sich im Vergleich zu den anderen Produktreihen durch ein hohes Maß an Konnektivität aus, da fast alle Boards von Werk aus unter anderem mit Wi-Fi- und Bluetooth-Chips ausgestattet sind. Beispiele für die verfügbare Boards der jeweiligen Reihen sind in Abbildung \ref{fig:Arduino_Family} zu sehen. 
+
+        \begin{figure}[!hbpt]
+        \centering
+        \begin{minipage}[t]{0.45\linewidth}
+            \includegraphics[scale=0.5]{../Fotos/Arduino_Family/Nano_33_IoT.png}
+        \end{minipage}
+        \begin{minipage}[t]{0.45\linewidth}
+            \includegraphics[scale=0.5]{../Fotos/Arduino_Family/Classic_UNO_R3.png}
+        \end{minipage}
+        \begin{minipage}[t]{0.45\linewidth}
+            \includegraphics[scale=0.5]{../Fotos/Arduino_Family/MKR_Wifi_1010.png}
+        \end{minipage}
+        \caption[Arduino Family]{Boards der Arduino Nano \footnotemark, Classic \footnotemark ~und MKR \footnotemark ~Familie}
+        \label{fig:Arduino_Family} 
+        \end{figure}
+
+        \footnotetext{~ \citetitle{Arduino_Nano} \cite{Arduino_Nano}}
+        \footnotetext{~ \citetitle{Arduino_Uno} \cite{Arduino_Uno}}
+        \footnotetext{~ \citetitle{Arduino_MKR} \cite{Arduino_MKR}}
+        
+
         Von ARDUINO selbst werden innerhalb dieser Serien vor allem Boards und Shields entwickelt.%zitiere Arduino about
 
-        Neben der Hardware bietet die ARDUINO-Plattform eine eigene integrierte Programmierumgebung (IDE), welche es Anwendern ermöglicht schnell kompatiblen Code zu schreiben und diesen auf die Boards zu übertragen. Vor allem die Möglichkeit Code nicht nur herkömmlich per Kabel, sondern auch kabellos über WLAN oder Bluetooth zu übertragen vereinfacht und beschleunigt den Entwicklungsprozess sehr. Für die Programmierung mit der Entwicklungsumgebung wird eine C++ ähnliche Sprache verwendet. Zusätzlich können über die Umgebung Code-Bibliotheken in eigene Projekte eingebunden werden, welche gängige Aufgaben übernehmen oder Kompatibilität zu Geräten und Mikrocontrollern von Drittanbietern ermöglichen.%belegen!
+        Neben der Hardware bietet die ARDUINO-Plattform eine eigene integrierte Programmierumgebung (IDE), welche es Anwendern ermöglicht schnell kompatiblen Code zu schreiben und diesen auf die Boards zu übertragen. Vor allem die Möglichkeit Code nicht nur herkömmlich per Kabel, sondern auch kabellos über WLAN oder Bluetooth zu übertragen vereinfacht und beschleunigt den Entwicklungsprozess sehr. Für die Programmierung mit der Entwicklungsumgebung wird eine vereinfachte C++ ähnliche Sprache verwendet. %TODO belegen Ein schneller Einstieg in die Microcontroller-Entwicklung
+        Zusätzlich können über die Umgebung Code-Bibliotheken in eigene Projekte eingebunden werden, welche gängige Aufgaben übernehmen oder Kompatibilität zu Geräten und Mikrocontrollern von Drittanbietern ermöglichen.%TODO belegen Arduino About Installing Libraries!
         
         Aufgrund dieser Kompatibilität, der Möglichkeit eine Vielzahl von analogen sowie digitalen Bauteilen zu verwenden und vergleichsweise geringen Anschaffungskosten, sind die Boards zum Beispiel im Bereich der DIY-Bewegung ("'Do It Yourself"'-Bewegung) sehr beliebt und verbreitet.
-        Im Bereich professioneller Anwendung wird ARDUINO zum Beispiel für Prototyping und Rapid-Iteration verwendet.%belegen! vielleicht bei conrad drinne
+        Im Bereich professioneller Anwendung wird ARDUINO zum Beispiel für Prototyping und Rapid-Iteration verwendet.%belegen! why arduino
 
         %TODO Schultheiß , sollten wir hier begründen warum wir uns für die arduino plattform entschieden haben?
 
@@ -255,6 +280,8 @@ $
 %\printbibliography
 %Anhang    
 \appendix
+
+
 \chapter{Begriffsdefinitionen}
 
 \section{Begriffsbezeichner} \label{sec:Begriffsbezeichner}
@@ -266,7 +293,5 @@ $
 
 
 \input{acronyme.tex}
-
-\nocite{*}
 
 \end{document}
